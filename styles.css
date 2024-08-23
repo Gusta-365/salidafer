@@ -15,15 +15,15 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .message {
     background-color: #f8e8e1;
     border-radius: 15px;
-    padding: 30px;
-    width: 90%;
-    max-width: 700px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1.5s ease-out;
     text-align: center;
@@ -31,13 +31,13 @@ body {
 
 .message h1 {
     color: #d08a6a;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .message p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
     color: #666;
 }
 
@@ -45,13 +45,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .option {
     position: relative;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 10px;
     border-radius: 10px;
     background-color: #fef9f5;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -70,7 +70,7 @@ input[type="radio"] {
 
 input[type="radio"]+span {
     display: block;
-    padding-left: 35px;
+    padding-left: 25px;
 }
 
 input[type="radio"]:checked+span {
@@ -82,12 +82,12 @@ button {
     background-color: #d08a6a;
     border: none;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-top: 15px;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -103,15 +103,15 @@ button:active {
 }
 
 #current-time {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 15px;
+    font-size: 16px;
     color: #444;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(-20px);
     }
 
     to {
