@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opciones para Comer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="message">
+            <h1>Hola Fer! 🎉</h1>
+            <p>Te tengo estas opciones para mañana para ir a comer:</p>
+            <form id="options-form">
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="option" value="Brule">
+                        <span>Si soñamos con un viaje a París, no podemos perder la oportunidad de conocer Brule, el
+                            rincón perfecto para inmortalizar nuestros momentos con un toque parisino.</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="option" value="La Catrina">
+                        <span>Si nuestro destino es México, no hay mejor opción que La Catrina, donde la tradición y el
+                            encanto se fusionan en un ambiente festivo y auténtico.</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="option" value="RocknRolla">
+                        <span>Para aquellos que anhelan retroceder a los vibrantes años 80 y revivir la magia de la
+                            época dorada del rock y el pop, RocknRolla es el lugar ideal para bailar y cantar al ritmo
+                            de clásicos inolvidables.</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="option" value="Italio">
+                        <span>Si lo nuestro es la dolce vita y el placer de la buena comida italiana, Italio nos
+                            transportará a la encantadora Italia con sus sabores y su ambiente acogedor.</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="option" value="El Puesto de Tacos de la Demo">
+                        <span>Para una noche especial a la luz de la luna, El Puesto de Tacos de la Demo nos ofrece un
+                            ambiente único y delicioso que hará de nuestra velada algo memorable.</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="option" value="Leyendas">
+                        <span>Si buscamos un rincón tranquilo y acogedor, que nos haga sentir como en casa, Leyendas es
+                            el lugar donde encontraremos la paz y la calidez que deseamos.</span>
+                    </label>
+                </div>
+                <button type="button" onclick="sendWhatsApp()">Enviar oferta seleccionada</button>
+            </form>
+            <p id="current-time">La hora actual es: <span id="time"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        function sendWhatsApp() {
+            const form = document.getElementById('options-form');
+            const selectedOption = form.querySelector('input[name="option"]:checked');
+            if (selectedOption) {
+                const message = encodeURIComponent(`Hola Gus, oferta seleccionada: ${selectedOption.value}`);
+                const url = `https://wa.me/50238121553?text=${message}`;
+                window.open(url, '_blank');
+            } else {
+                alert('Por favor, selecciona una opción.');
+            }
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>
